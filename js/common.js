@@ -48,6 +48,27 @@ const gTabs = {
 	}
 }
 
+const popup = {
+   order: '.js-popup',
+   popup: '.popup',
+   overlay: '.popup__overlay',
+   close: '.popup__close',
+   page: '.main-wrap',
+   init: function() {
+      var t = this;
+      $(t.order).on('click', function() {
+         $(t.popup).addClass('popup_show');
+         $(t.overlay).addClass('popup__overlay_show');
+         $(t.page).addClass('page__popup');
+      })
+      $(t.close).on('click', function (){
+         $(t.popup).removeClass('popup_show');
+         $(t.overlay).removeClass('popup__overlay_show');
+         $(t.page).removeClass('page__popup');
+      })
+   }
+}
+
 $('a.scroll-to').on('click', function(e){
    e.preventDefault();
    var anchor = $(this).attr('href');
@@ -62,4 +83,5 @@ $(function() {
    activeClass.init(); // add is-active class
    gTabs.init();
    activeBtn.init(); // actibe button size
+   popup.init(); //open popup
 });
