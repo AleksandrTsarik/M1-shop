@@ -3,6 +3,7 @@ h1, h2, h3, h4, h5, h6, p
    margin: 0
    padding: 0
 
+
 *, *:focus, *:after, *:before
    -webkit-tap-highlight-color: rgba(0, 0, 0, 0)
    -moz-box-sizing: border-box
@@ -48,6 +49,10 @@ body
    max-width: 1060px
    margin: 0 auto
    padding: 0 50px
+   @media screen and ( max-width: 991px )
+      padding: 0 25px
+   @media screen and ( max-width: 768px )
+      padding: 0 15px
 .title
    font-size: 36px
    font-weight: 700
@@ -80,9 +85,6 @@ button
    &--red
       background: red
 
-// .disabled
-//    color: #ceced3
-   
 table
    border-collapse: collapse
    background: #fff
@@ -128,11 +130,17 @@ table
       line-height: 65px
       width: 100%
       box-shadow: 0 0 5px rgba(#56002f ,0.8 )
+
+      &__menu
+         @media screen and ( max-width: 960px )
+            display: none
       &-inner
          display: flex
          align-items: center
          justify-content: space-between
       &__logo
+         @media screen and ( max-width: 960px )
+            margin: 0 auto
          img
             margin-bottom: 10px
       &__list
@@ -199,6 +207,8 @@ table
       &__block-link
          display: flex
          justify-content: center
+         @media screen and ( max-width: 575px )
+            flex-wrap: wrap
          a
             color: #fff
             font-size: 16px
@@ -213,6 +223,10 @@ table
                box-shadow: 0 0 10px rgba(white ,0.7) 
          a + a
             margin-left: 10px
+            @media screen and ( max-width: 575px )
+               margin-left: 0
+               margin-top: 15px
+            
 
 //------------fashion----------//
 .fashion
@@ -240,14 +254,16 @@ table
 //------------catalog----------//
 .catalog
    margin-top: 40px
+   padding-bottom: 80px
    &-tabs
       display: flex
       justify-content: center
       margin-top: 20px
+      margin-bottom: 20px
       &__block
          display: none
          &.is-active
-                  display: block
+            display: block
       &__item
          background: #f3f3f3
          width: 305px
@@ -258,6 +274,14 @@ table
          font-size: 18px
          transition: 0.3s
          cursor: pointer
+         @media screen and ( max-width: 768px )
+            width: auto
+            height: auto
+            line-height: normal
+            padding: 25px 10px
+            font-size: 14px
+         @media screen and ( max-width: 400px )
+            font-size: 12px
          &:hover
             box-shadow: 0 0 8px rgba(black ,0.5 )inset
          &.is-active
@@ -272,7 +296,12 @@ table
       padding: 10px
       flex: 0 0 33.333%
       max-width: 33.333%
-      margin: 20px 0
+      @media screen and ( max-width: 960px )
+         flex: 0 0 50%
+         max-width: 50%
+      @media screen and ( max-width: 575px )
+         flex: 0 0 100%
+         max-width: 100%
       &__inner
          border: solid 1px #dbdbdf
          img
@@ -298,16 +327,26 @@ table
       &__size
          display: flex
          justify-content: center
+         margin-bottom: 15px
          button
             text-transform: uppercase
             border: solid 1px transparent
             transition: 0.3s
             display: block
             border-radius: 2px
+            font-size: 18px
             &:hover
                border-color: #ba0152
             &:disabled
                border-color: none
+               border: transparent
+               cursor: auto
+            &.is-active
+               border-color: #ba0152
+      &__name
+         font-size: 18px
+         margin-bottom: 15px
+         font-weight: 700
       &__color
          display: flex
          align-items: center
@@ -323,11 +362,14 @@ table
                border-color: gray
             &.is-active
                border-color: gray
+         div + div
+            margin-left: 10px
 
       &__price
          display: flex
          align-items: center
          justify-content: center
+         margin-bottom: 12px
          div + div
             margin-left: 20px
          &--old
@@ -337,6 +379,7 @@ table
          &--new
             font-size: 30px
             color: #b4014e
+            font-weight: 700
       &__btn
          button
             color: #fff
@@ -353,6 +396,91 @@ table
             &:hover
                box-shadow: 0 0 5px rgba(#8d54e9, 0.5)
 
-                  
+//------------footer----------//
+.footer
+   background: #f7f2f4
+   padding: 80px 0
+   &__list
+      display: flex
+      align-items: center
+      justify-content: space-between
+      margin: 30px -10px 0
+      @media screen and ( max-width: 768px )
+         flex-wrap: wrap
+   &-item
+      flex: 0 0 25%
+      max-width: 25%
+      padding: 0 10px
+      @media screen and ( max-width: 768px )
+         flex: 0 0 50%
+         max-width: 50%
+      &__inner
+         text-align: center
+         display: flex
+         justify-content: center
+         flex-direction: column
+         align-items: center
+         @media screen and ( max-width: 960px )
+            margin-bottom: 40px
+      &__img
+         width: 120px
+         height: 120px
+         border-radius: 50%
+         background: #b4014e
+         position: relative
+         border: solid 6px #d579a1
+         margin-bottom: 45px
+         @media screen and ( max-width: 960px )
+            width: 80px
+            height: 80px
+            margin-bottom: 20px
+         @media screen and ( max-width: 768px )
+            width: 120px
+            height: 120px
+         @media screen and ( max-width: 575px )
+            width: 80px
+            height: 80px
+            margin-bottom: 20px
+         img
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            margin: auto
+            @media screen and ( max-width: 960px )
+               width: 50%
+         &::after
+            content: ''
+            position: absolute
+            left: 50%
+            bottom: -20px
+            transform: translateX(-50%)
+            display: block
+            width: 10px
+            height: 10px
+            border-radius: 50%
+            background: #ceced3
+            box-shadow: 0 0 0px 4px #ebe7ea
+            @media screen and ( max-width: 768px )
+               display: none
+         &::before
+            content: ''
+            position: absolute
+            bottom: -10px
+            left: 50%
+            transform: translateX(-50%)
+            width: 100%
+            height: 3px
+            border: dashed 1px red
+            @media screen and ( max-width: 768px )
+               display: none
+      &__text
+         font-size: 16px
+         height: 60px
+         @media screen and ( max-width: 960px )
+            font-size: 14px
+         // @media screen and ( max-width: 768px )
+         //    height: auto
 
 

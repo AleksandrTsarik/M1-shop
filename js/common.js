@@ -1,8 +1,5 @@
 'use strict'
 
-$('.js-active').on('click', function(){
-   
-})
 const activeClass = {
    btn: '.js-active',
    init: function() {
@@ -13,6 +10,17 @@ const activeClass = {
          $(this).addClass('is-active');
       });
 
+   }
+}
+
+const activeBtn = {
+   btn: '.js-active-btn button',
+   init: function() {
+      var t = this;
+      $(t.btn).on('click', function (){
+         $(t.btn).removeClass('is-active');
+         $(this).addClass('is-active');
+      })
    }
 }
 
@@ -40,8 +48,18 @@ const gTabs = {
 	}
 }
 
+$('a.scroll-to').on('click', function(e){
+   e.preventDefault();
+   var anchor = $(this).attr('href');
+   $('html, body').stop().animate({
+         scrollTop: $(anchor).offset().top - 60
+   }, 800);
+});
+
+
 
 $(function() {
    activeClass.init(); // add is-active class
    gTabs.init();
+   activeBtn.init(); // actibe button size
 });
