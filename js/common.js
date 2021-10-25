@@ -69,19 +69,31 @@ const popup = {
    }
 }
 
-$('a.scroll-to').on('click', function(e){
-   e.preventDefault();
-   var anchor = $(this).attr('href');
-   $('html, body').stop().animate({
-         scrollTop: $(anchor).offset().top - 60
-   }, 800);
-});
+const scrollTo = {
+   init: function() {
+      $('a.scroll-to').on('click', function(e){
+         e.preventDefault();
+         var anchor = $(this).attr('href');
+         $('html, body').stop().animate({
+               scrollTop: $(anchor).offset().top - 60
+         }, 800);
+      });
+   }
+}
+
+const maskPhone = {
+   init: function() {
+      $('.js-phone').mask('+7 (999) 999-99-99');
+   }
+}
 
 
 
 $(function() {
    activeClass.init(); // add is-active class
-   gTabs.init();
+   gTabs.init(); // tabs
    activeBtn.init(); // actibe button size
    popup.init(); //open popup
+   scrollTo.init(); //scroll
+   maskPhone.init(); //phone mask
 });

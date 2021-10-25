@@ -5,6 +5,8 @@
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="js/jquery.min.js">
+   <link rel="stylesheet" href="js/jquery-ui.min.js">
+   <link rel="stylesheet" href="js/jquery.mask.min.js">
    <link rel="stylesheet" href="style/style.css">
    <title>M1-Shop</title>
 </head>
@@ -566,6 +568,41 @@
       <div class="popup__overlay">
          <div class="popup">
             <div class="popup__close"></div>
+            <div class="popup-inner">
+               <div class="popup__img popup-block">
+                  <img src="img/catalog/item1.jpg" alt="">
+               </div>
+               <div class="popup__info popup-block">
+                  <div class="popup__name">Портупея “Джони Миллер”</div>
+                  <div class="popup__price">
+                     <div class="popup__price--old catalog-item__price--old">4990 р.</div>
+                     <div class="popup__price--new catalog-item__price--new">2990 р.</div>
+                  </div>
+                  <form>
+                     <div class="popup-form__inner">
+                        <div class="popup-form__label">
+                           <select name="" id="">
+                              <option value="XS">XS</option>
+                              <option value="S">S</option>
+                              <option value="M">M</option>
+                              <option value="L">L</option>
+                              <option value="XL">XL</option>
+                              <option value="XXL">XLL</option>
+                           </select>
+                        </div>
+                        <label class="popup-form__label">
+                           <input type="text" name="name" class="popup-form__input" placeholder="Введите веше имя">
+                        </label>
+                        <label class="popup-form__label">
+                           <input type="text" name="phone" class="popup-form__input js-phone" placeholder="Введите веш телефон">
+                        </label>
+                        <label class="popup-form__label catalog-item__btn">
+                           <button>Формить заказ</button>
+                        </label>
+                     </div>
+                  </form>
+               </div>
+            </div>
          </div>
       </div>
    </div>
@@ -573,6 +610,7 @@
    src="https://code.jquery.com/jquery-3.6.0.min.js"
    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
    crossorigin="anonymous"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
    <script src="js/common.js"></script>
 </body>
 </html>
