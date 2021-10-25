@@ -36,15 +36,11 @@ const gTabs = {
 	},
 	activeTab: function(obj){
 		var t = this, p = $(obj).closest(t.parentTabs);
-
 		p.find(t.captionTab).removeClass('is-active')
 		$(obj).addClass('is-active');
-
 		let idx = p.find(t.captionTab).index($(obj));
 		p.find(t.blockTab).removeClass('is-active');
 		p.find(t.blockTab).eq(idx).addClass('is-active');
-
-		gProduct.reactive();
 	}
 }
 
@@ -54,12 +50,21 @@ const popup = {
    overlay: '.popup__overlay',
    close: '.popup__close',
    page: '.main-wrap',
+   popupImg: '.popup__img img',
    init: function() {
       var t = this;
-      $(t.order).on('click', function() {
+      $(t.order).on('click', function(e) {
+         e.preventDefault();  
+         var priceOld = $(this).prev().find('.catalog-item__price--old').text();
+         var priceNew = $(this).prev().find('.catalog-item__price--new').text();
+         var title = $(this).closest('.catalog-item').find('.catalog-item__name').text();
          $(t.popup).addClass('popup_show');
          $(t.overlay).addClass('popup__overlay_show');
          $(t.page).addClass('page__popup');
+         $(t.popupImg).attr('src', $(this).parent().siblings('.catalog-item__img').find('img').attr('src'));
+         $('.popup__price--old').text(priceOld);
+         $('.popup__price--new').text(priceNew);         
+         $('.popup__name').text(title);
       })
       $(t.close).on('click', function (){
          $(t.popup).removeClass('popup_show');

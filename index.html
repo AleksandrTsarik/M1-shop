@@ -4,9 +4,8 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <link rel="stylesheet" href="js/jquery.min.js">
-   <link rel="stylesheet" href="js/jquery-ui.min.js">
-   <link rel="stylesheet" href="js/jquery.mask.min.js">
+   <script src="js/jquery.min.js"></script>
+   <script src="js/jquery.mask.min.js"></script>
    <link rel="stylesheet" href="style/style.css">
    <title>M1-Shop</title>
 </head>
@@ -49,8 +48,8 @@
                   <div class="t-bold">всего за <span>2990р</span></div>
                </div>
                <div class="header-bottom__block-link">
-                  <a href="#" class="t-bold">повседневные портупеи</a>
-                  <a href="#" class="t-bold">Эротические портупеи</a>
+                  <a href="#every-items" onclick="$('#every-items').trigger('click')" class="t-bold">повседневные портупеи</a>
+                  <a href="#ero-items" onclick="$('#ero-items').trigger('click')" class="t-bold">Эротические портупеи</a>
                </div>
             </div>
             
@@ -73,57 +72,60 @@
          <section class="tabel">
             <div class="container">
                <div class="title title__page">Таблица размеров</div>
-               <table>
-                  <thead>
-                     <tr>
-                        <th>Международный</th>
-                        <th>XS</th>
-                        <th>S</th>
-                        <th>M</th>
-                        <th>L</th>
-                        <th>XL</th>
-                        <th>XXL</th>
-                     </tr>
-                  </thead>
-                  <tbody>
-                     <tr>
-                        <td>Росийский</td>
-                        <td>40</td>
-                        <td>42</td>
-                        <td>44/46</td>
-                        <td>48/50</td>
-                        <td>52/54</td>
-                        <td>56</td>
-                     </tr>
-                     <tr>
-                        <td>Бедра (см)</td>
-                        <td>84-92</td>
-                        <td>92-95</td>
-                        <td>96-101</td>
-                        <td>102-108</td>
-                        <td>109-116</td>
-                        <td>117-121</td>
-                     </tr>
-                     <tr>
-                        <td>Бедра (см)</td>
-                        <td>60-65</td>
-                        <td>66-69</td>
-                        <td>70-77</td>
-                        <td>78-85</td>
-                        <td>86-95</td>
-                        <td>96-102</td>
-                     </tr>
-                     <tr>
-                        <td>Грудь (см)</td>
-                        <td>74-80</td>
-                        <td>82-52</td>
-                        <td>86-93</td>
-                        <td>94-102</td>
-                        <td>103-113</td>
-                        <td>114-119</td>
-                     </tr>
-                  </tbody>
-               </table>
+               <div class="table-wrap">
+                  <table>
+                     <thead>
+                        <tr>
+                           <th>Международный</th>
+                           <th>XS</th>
+                           <th>S</th>
+                           <th>M</th>
+                           <th>L</th>
+                           <th>XL</th>
+                           <th>XXL</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td>Росийский</td>
+                           <td>40</td>
+                           <td>42</td>
+                           <td>44/46</td>
+                           <td>48/50</td>
+                           <td>52/54</td>
+                           <td>56</td>
+                        </tr>
+                        <tr>
+                           <td>Бедра (см)</td>
+                           <td>84-92</td>
+                           <td>92-95</td>
+                           <td>96-101</td>
+                           <td>102-108</td>
+                           <td>109-116</td>
+                           <td>117-121</td>
+                        </tr>
+                        <tr>
+                           <td>Бедра (см)</td>
+                           <td>60-65</td>
+                           <td>66-69</td>
+                           <td>70-77</td>
+                           <td>78-85</td>
+                           <td>86-95</td>
+                           <td>96-102</td>
+                        </tr>
+                        <tr>
+                           <td>Грудь (см)</td>
+                           <td>74-80</td>
+                           <td>82-52</td>
+                           <td>86-93</td>
+                           <td>94-102</td>
+                           <td>103-113</td>
+                           <td>114-119</td>
+                        </tr>
+                     </tbody>
+                  </table>
+               </div>
+               
             </div>
             
          </section>
@@ -131,8 +133,8 @@
             <div class="container">
                <div class="title">Каталог</div>
                <div class="catalog-tabs">
-                  <div class="catalog-tabs__item js-tab-caption is-active">павседневные портупеи</div>
-                  <div class="catalog-tabs__item js-tab-caption">эротичесские портупеи</div>
+                  <div id="every-items" class="catalog-tabs__item js-tab-caption is-active">павседневные портупеи</div>
+                  <div id="ero-items" class="catalog-tabs__item js-tab-caption">эротичесские портупеи</div>
                </div>
                <div class="catalog-tabs-box">
                   <div class="catalog-tabs__block js-tab-block is-active">
@@ -163,7 +165,7 @@
                                     <div class="catalog-item__price--new">2990 р.</div>
                                  </div>
                                  <div class="catalog-item__btn js-popup">
-                                    <button>заказать</button>
+                                    <button class="">заказать</button>
                                  </div>
                               </div>
                            </div>
@@ -190,8 +192,8 @@
                                     
                                  </div>
                                  <div class="catalog-item__price js-active">
-                                    <div class="catalog-item__price--old">4990 р.</div>
-                                    <div class="catalog-item__price--new">2990 р.</div>
+                                    <div class="catalog-item__price--old">5990 р.</div>
+                                    <div class="catalog-item__price--new">3990 р.</div>
                                  </div>
                                  <div class="catalog-item__btn js-popup">
                                     <button>заказать</button>
@@ -283,8 +285,8 @@
                                     
                                  </div>
                                  <div class="catalog-item__price js-active">
-                                    <div class="catalog-item__price--old">4990 р.</div>
-                                    <div class="catalog-item__price--new">2990 р.</div>
+                                    <div class="catalog-item__price--old">5990 р.</div>
+                                    <div class="catalog-item__price--new">3990 р.</div>
                                  </div>
                                  <div class="catalog-item__btn js-popup">
                                     <button>заказать</button>
@@ -564,6 +566,8 @@
             </div>
          </div>
       </footer>
+
+
       <!-- popup -->
       <div class="popup__overlay">
          <div class="popup">
@@ -606,11 +610,11 @@
          </div>
       </div>
    </div>
-   <script
+   <!-- <script
    src="https://code.jquery.com/jquery-3.6.0.min.js"
    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
    crossorigin="anonymous"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js" integrity="sha512-pHVGpX7F/27yZ0ISY+VVjyULApbDlD0/X0rgGbTqCE7WFW5MezNTWG/dnhtbBuICzsd0WQPgpE4REBLv+UqChw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
    <script src="js/common.js"></script>
 </body>
 </html>

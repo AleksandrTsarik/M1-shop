@@ -45,10 +45,6 @@ article, aside, footer, header, nav, section, canvas {
   height: 100vh;
 }
 
-.main-wrap.page__popup {
-  overflow: hidden;
-}
-
 .page-container {
   max-width: 100%;
   overflow: hidden;
@@ -150,11 +146,8 @@ input, select {
 table {
   border-collapse: collapse;
   background: #fff;
-  margin: 15px auto 0;
-  padding: 20px;
   font-size: 14px;
-  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  width: 100%;
 }
 
 table th {
@@ -403,6 +396,13 @@ table tbody tr td:first-child {
   background-repeat: no-repeat;
   background-size: cover;
   padding: 40px 0 50px;
+}
+
+.table-wrap {
+  padding: 30px;
+  background: #fff;
+  -webkit-box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .catalog {
