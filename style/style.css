@@ -1137,6 +1137,10 @@ table tbody tr td:first-child {
   margin-bottom: 7px;
 }
 
+.popup__price--new {
+  margin-top: -5px;
+}
+
 .popup__price div + div {
   margin-left: 1em;
 }
