@@ -1060,7 +1060,7 @@ table tbody tr td:first-child {
   max-width: 50%;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 640px) {
   .popup-block {
     -webkit-box-flex: 0;
         -ms-flex: 0 0 100%;
@@ -1078,7 +1078,7 @@ table tbody tr td:first-child {
   display: flex;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 640px) {
   .popup__img img {
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
@@ -1093,7 +1093,7 @@ table tbody tr td:first-child {
   text-align: center;
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 640px) {
   .popup-inner {
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
